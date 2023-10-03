@@ -23,7 +23,7 @@ $quantidade = count($listaDeFabricantes);
         <?php if(isset($_GET["status"]) && $_GET["status"] === "sucesso"){ ?>
             <h2 style="color:blue">Fabricante atualizado com sucesso!</h2>
         <?php } ?>
-        <table>
+        <table class="table table-striped table-hover caption-top">
             <caption>Lista de Fabricantes: <b><?=$quantidade?></b></caption>
             <thead>
                 <tr>
