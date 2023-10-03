@@ -45,40 +45,40 @@ if(isset($_POST['atualizar'])){
         <h1>Produtos | SELECT/UPDATE</h1>
         <hr>
         <form action="" method="post">
-            <p>
+            <p class="form-floating">
+                <input class="form-control" value="<?=$produto['nome']?>" type="text" name="nome" id="nome" required>
                 <label for="nome">Nome:</label>
-                <input value="<?=$produto['nome']?>" type="text" name="nome" id="nome" required>
             </p>
-            <p>
-                <label for="preco">Preço:</label>
-                <input value="<?=$produto['preco']?>"
+            <p class="form-floating">
+                <input class="form-control" value="<?=$produto['preco']?>"
                 type="number" min="10" max="10000" step="0.01"
-                 name="preco" id="preco" required>
+                name="preco" id="preco" required>
+                <label for="preco">Preço:</label>
             </p>
-            <p>
-                <label for="quantidade">Quantidade:</label>
-                <input value="<?=$produto['quantidade']?>"
+            <p class="form-floating">
+                <input class="form-control" value="<?=$produto['quantidade']?>"
                 type="number" min="1" max="100"
-                 name="quantidade" id="quantidade" required>
+                name="quantidade" id="quantidade" required>
+                <label for="quantidade">Quantidade:</label>
             </p>
-            <p>
-                <label for="fabricante">Fabricante:</label>
-                <select name="fabricante" id="fabricante" required>
+            <p class="form-floating">
+                <select class="form-select" name="fabricante" id="fabricante" required>
                     <option value=""></option>
-        
+                    
                     <?php foreach( $listaDeFabricantes as $fabricante ) { ?>
                         <option <?php if($produto["fabricante_id"] === $fabricante["id"]) echo " selected "; ?>
-                        value="<?=$fabricante['id']?>">
+                            value="<?=$fabricante['id']?>">
                             <?=$fabricante['nome']?>
                         </option>
                     <?php } ?>
                 </select>
+                <label for="fabricante">Fabricante:</label>
             </p>
-            <p>
+            <p class="form-floating">
+                <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="3"><?=$produto['descricao']?></textarea>
                 <label for="descricao">Descrição:</label> <br>
-                <textarea name="descricao" id="descricao" cols="30" rows="3"><?=$produto['descricao']?></textarea>
             </p>
-            <button type="submit" name="atualizar">Atualizar produto</button>
+            <button class="btn btn-primary" type="submit" name="atualizar">Atualizar produto</button>
         </form>
         <hr>
         <p><a href="visualizar.php">Voltar</a></p>
