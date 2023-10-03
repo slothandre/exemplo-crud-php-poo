@@ -23,11 +23,11 @@ if( isset($_POST['atualizar']) ){
         <hr>
         <form action="" method="post">
             <input type="hidden" name="id" value="<?=$fabricante['id']?>">
-            <p>
+            <p class="form-floating">
+                <input class="form-control" value="<?=$fabricante['nome']?>" required type="text" name="nome" id="nome" placeholder="">
                 <label for="nome">Nome:</label>
-                <input value="<?=$fabricante['nome']?>" required type="text" name="nome" id="nome">
             </p>
-            <button type="submit" name="atualizar">
+            <button class="btn btn-primary" type="submit" name="atualizar">
                 Atualizar fabricante</button>
         </form>
         <hr>
