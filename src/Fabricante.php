@@ -1,8 +1,20 @@
 <?php
 namespace ExemploCrudPoo;
+use PDO;
 final class Fabricante {
     private int $id;
     private string $nome;
+
+    /* Esta propriedade receberá os recursos
+    PDO através da classe Banco (dependência deste projeto) */
+    private PDO $conexao;
+
+    public function __construct() {
+        /* No momento em que um objeto Fabricante for
+        criado, automaticamente será feita a chamada
+        do método "conecta" existente na classe Banco. */
+        $this->conexao = Banco::conecta();
+    }
 
     
     public function getId(): int
