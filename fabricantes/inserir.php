@@ -19,11 +19,11 @@ if( isset($_POST['inserir']) ){
         <h1>Fabricantes | INSERT</h1>
         <hr>
         <form action="" method="post">
-            <p>
+            <p class="form-floating">
+                <input class="form-control" required type="text" name="nome" id="nome" placeholder="">
                 <label for="nome">Nome:</label>
-                <input required type="text" name="nome" id="nome">
             </p>
-            <button type="submit" name="inserir">Inserir fabricante</button>
+            <button class="btn btn-primary" type="submit" name="inserir">Inserir fabricante</button>
         </form>
         <hr>
         <p><a href="visualizar.php">Voltar</a></p>
