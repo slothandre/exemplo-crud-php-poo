@@ -43,35 +43,35 @@ if(isset($_POST['inserir'])){
         <h1>Produtos | INSERT</h1>
         <hr>
         <form action="" method="post">
-            <p>
+            <p class="form-floating">
+                <input class="form-control" type="text" name="nome" id="nome" required placeholder="">
                 <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required>
             </p>
-            <p>
+            <p class="form-floating">
+                <input class="form-control" type="number" min="10" max="10000" step="0.01"
+                name="preco" id="preco" required placeholder="">
                 <label for="preco">Preço:</label>
-                <input type="number" min="10" max="10000" step="0.01"
-                 name="preco" id="preco" required>
             </p>
-            <p>
+            <p class="form-floating">
+                <input class="form-control" type="number" min="1" max="100"
+                name="quantidade" id="quantidade" required placeholder="">
                 <label for="quantidade">Quantidade:</label>
-                <input type="number" min="1" max="100"
-                 name="quantidade" id="quantidade" required>
             </p>
-            <p>
-                <label for="fabricante">Fabricante:</label>
-                <select name="fabricante" id="fabricante" required>
+            <p class="form-floating">
+                <select class="form-select" name="fabricante" id="fabricante" required>
                     <option value=""></option>
-        
+                    
                     <?php foreach($listaDeFabricantes as $fabricante) { ?>
-                    <option value="<?=$fabricante['id']?>">
-                        <?=$fabricante['nome']?>
-                    </option>
+                        <option value="<?=$fabricante['id']?>">
+                            <?=$fabricante['nome']?>
+                        </option>
                     <?php } ?>
                 </select>
+                <label for="fabricante">Fabricante:</label>
             </p>
-            <p>
+            <p class="form-floating">
+                <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="3" placeholder=""></textarea>
                 <label for="descricao">Descrição:</label> <br>
-                <textarea name="descricao" id="descricao" cols="30" rows="3"></textarea>
             </p>
             <button type="submit" name="inserir">Inserir produto</button>
         </form>
