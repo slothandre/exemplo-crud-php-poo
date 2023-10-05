@@ -13,3 +13,5 @@ Você deve:
 - Criar uma classe abstrata chamada `Utilitarios` e transferir para ela todas as funções utilitárias. As funções deverão ser métodos estáticos. 
 
 - Refatorar todos os arquivos da pasta **produtos** para que passem a utilizar os recursos das classes `Produto` e `Utilitarios`.
+
+- Teste tudo e, **estando tudo OK**, apague todos os arquivos de funções.
